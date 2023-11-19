@@ -7,18 +7,19 @@ int main(){
 	cin>>n;
 	int row=1;
 	while(row<=n){
-		int space=n-row;
+		int space= row-1;
 		while(space){
 			cout<<" ";
 			space--;
 		}
 		int col=1;
-		while(col<=row){
+		while(col<=(n-(row-1))){
 			cout<<"*";
 			col++;
 		}
 		cout<<endl;
 		row++;
+		
 	}
 	return 0;
 }

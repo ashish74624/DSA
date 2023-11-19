@@ -7,15 +7,23 @@ int main(){
 	cin>>n;
 	int row=1;
 	while(row<=n){
-		int space= row-1;
-		while(space<row){
+//		Space triangle
+		int space=n-row;
+		while(space){
 			cout<<" ";
-			space++;
+			space--;
 		}
+//		2nd triangle
 		int col=1;
-		while(col<=n){
-			cout<<"*";
+		while(col<=row){
+			cout<<col;
 			col++;
+		}
+//		3rd triangle
+		int col2=row-1;
+		while(col2){
+			cout<<col2;
+			col2--;
 		}
 		cout<<endl;
 		row++;
