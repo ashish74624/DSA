@@ -158,6 +158,25 @@ void deleteNode(Node* &tail, int value) {
 
 }
 
+bool isCircular(Node* head){
+	if(head==NULL){
+		return true;
+	}
+//	cout<<"issue"<<endl;
+	Node* temp=head->next;
+	while(temp!=NULL && temp!=head){
+		temp=temp->next;
+	}
+	if(temp==head){
+		return true;
+	}
+		return false;
+	
+	
+}
+
+
+
 int main(){
     Node* tail = NULL;
     // print(tail);
@@ -169,13 +188,18 @@ int main(){
     // print(tail);
     insertAtTail(tail,30);
     // print(tail);
-    insertAtPosition(tail,1,500);
-    // print(tail);
-    insertAtPosition(tail,6,40);
+//    insertAtPosition(tail,1,500);
+//    // print(tail);
+//    insertAtPosition(tail,6,40);
+//    print(tail);
+//    deleteNode(tail,10);
     print(tail);
-    deleteNode(tail,10);
-    print(tail);
-    cout<<"Tail "<<tail->data<<endl;
+//    cout<<"Tail "<<tail->data<<endl;
+	if(isCircular(tail)){
+		cout<<"It is Circular"<<endl;
+	}else{
+		cout<<"Not circular"<<endl;
+	}
 
     return 0;
 }
